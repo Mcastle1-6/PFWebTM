@@ -1,0 +1,35 @@
+.card {
+    border-radius: 10px; /* Esquinas redondeadas */
+    transition: transform 0.2s; /* Efecto de hover */
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Amplía la tarjeta ligeramente */
+  }
+  
+  .bg-primary {
+    background-color: #0077ff !important; /* Azul sólido */
+  }
+  
+  .bg-success {
+    background-color: #149231 !important; /* Verde sólido */
+  }
+  
+  body {
+    background-color: #ffffff; /* Beige claro */
+    color: #333; /* Texto en gris oscuro para buen contraste */
+  }
+
+  #navbartop {
+  background-color: #f5f5dc; /* Beige claro */
+
+  }  
+  .custom-navbar {
+    background-color: #ffffff; /* Fondo beige claro */
+    font-family: Arial, sans-serif; /* Fuente Arial */
+  }
+  
+  .custom-navbar .navbar-text {
+    color: #333; /* Color del texto (gris oscuro para contraste) */
+  }
+  

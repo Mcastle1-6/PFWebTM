@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+
+    <div class="container text-center">
+
+
+      <nav class="navbar custom-navbar">
+        <div class="container-fluid">
+          <div class="row w-100">
+            <!-- Columna del logo -->
+            <div class="col-3 d-flex align-items-center">
+              <img src="/assets/logotorre.png" alt="Logo" class="img-fluid" style="max-height: 50px;">
+            </div>
+            <!-- Columna del eslogan -->
+            <div class="col-9 d-flex align-items-center">
+              <span class="navbar-text fs-1 text-center w-100">
+                <strong>Tu Salud, Nuestra Prioridad</strong>
+              </span>
+            </div>
+
+             <!-- Columna sobre nosotros -->
+             <div class="col-1 d-flex align-items-center">
+              <span class="navbar-text fs-8 text-end w-100">
+                <a href="/sobrenosotros.html">
+
+                <button type="button" class="btn btn-info rounded-pill" onclick="activarOtraPestaña()">Sobre nosotros
+                </button>
+
+                </a>
+                
+
+              </span>
+            </div>
+
+
+          
+          </div>
+        </div>
+      </nav>
+      
+      
+
+
+
+
+        <h1 class="my-4">Bienvenido a la Torre Médica</h1>
+        <p class="mb-5">Selecciona tu tipo de usuario para continuar:</p>
+        <div class="row justify-content-center">
+
+          <!-- Tarjeta para Pacientes -->
+          <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Soy Paciente</h5>
+                <p class="card-text">Accede a tus citas, historial médico y promociones.</p>
+                <a href="/paciente.html" ><button type="button" class="btn btn-success" onclick="activarNuevaPestaña()">Entrar</button>
+
+                </a>
+              </div>
+            </div>
+          </div>
+        
+  <!-- Modal: Perfil del Paciente -->
+  <div class="modal fade" id="perfilPacienteModal" tabindex="-1" aria-labelledby="perfilPacienteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="perfilPacienteModalLabel">Tu perfil</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <!-- Tabs -->
+
+          <script>
+            function activarNuevaPestaña() { 
+              const modal = new bootstrap.Modal(document.querySelector('#perfilPacienteModal'));
+              modal.show();
+          
+              // Activacion
+              const nuevaTab = new bootstrap.Tab(document.querySelector('#nueva-tab'));
+              nuevaTab.show();
+            }
+          </script>
+          <script>
+            function activarOtraPestaña() { 
+              const modal = new bootstrap.Modal(document.querySelector('#perfilPacienteModal'));
+              modal.show();
+          
+              // Activacion
+              const nuevaTab = new bootstrap.Tab(document.querySelector('#nueva-tab'));
+              nuevaTab.show();
+            }
+          </script>
+
+          <ul class="nav nav-tabs" id="perfilTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="citas-tab" data-bs-toggle="tab" data-bs-target="#citas" type="button" role="tab" aria-controls="citas" aria-selected="true">
+                Opciones de Citas
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="historial-tab" data-bs-toggle="tab" data-bs-target="#historial" type="button" role="tab" aria-controls="historial" aria-selected="false">
+                Historial de Consultas
+              </button>
+            </li>
+          </ul>
+
+
+          <div class="tab-content mt-3" id="perfilTabContent">
+            <!-- Tab 1: Opciones de Citas -->
+            <div class="tab-pane fade show active" id="citas" role="tabpanel" aria-labelledby="citas-tab">
+              <div class="accordion" id="accordionCitas">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingAgendar">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAgendar" aria-expanded="true" aria-controls="collapseAgendar">
+                      Agendar Cita
+                    </button>
+                  </h2>
+                  <div id="collapseAgendar" class="accordion-collapse collapse show" aria-labelledby="headingAgendar" data-bs-parent="#accordionCitas">
+                    <div class="accordion-body">
+                      <p>Formulario para agendar cita aquí.</p>
+                      <!-- Tooltip -->
+                      <button class="btn btn-info" data-bs-toggle="tooltip" data-bs-placement="top" title="Rellena todos los campos requeridos.">¿Necesitas ayuda?</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingReagendar">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseReagendar" aria-expanded="false" aria-controls="collapseReagendar">
+                      Reagendar Cita
+                    </button>
+                  </h2>
+                  <div id="collapseReagendar" class="accordion-collapse collapse" aria-labelledby="headingReagendar" data-bs-parent="#accordionCitas">
+                    <div class="accordion-body">
+                      <p>Formulario para reagendar cita aquí.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="headingCancelar">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCancelar" aria-expanded="false" aria-controls="collapseCancelar">
+                      Cancelar Citas
+                    </button>
+                  </h2>
+                  <div id="collapseCancelar" class="accordion-collapse collapse" aria-labelledby="headingCancelar" data-bs-parent="#accordionCitas">
+                    <div class="accordion-body">
+                      <p>Formulario para cancelar citas aquí.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Tab 2: Historial de Consultas -->
+            <div class="tab-pane fade" id="historial" role="tabpanel" aria-labelledby="historial-tab">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Historial de Consultas</h5>
+                  <p class="card-text">Aquí se muestra el historial de todas tus consultas.</p>
+                  <!-- Popover -->
+                  <button class="btn btn-secondary" type="button" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Lista de atenciones por fecha">
+                   Lista
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+          
+          <!-- Tarjeta para Médicos -->
+          <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+              <div class="card-body">
+                <h5 class="card-title">Soy Médico</h5>
+                <p class="card-text">Gestiona tu agenda y consulta historiales clínicos.</p>
+                <a href="/Medicos.html" class="btn btn-light">Entrar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+
+
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</html>
